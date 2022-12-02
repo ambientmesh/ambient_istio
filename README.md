@@ -2,7 +2,7 @@
 
 **Sidecar-less data plane for istio
 
-![image](https://media.github.service.anz/user/75/files/d69ba6d1-bc05-4c17-aec8-10bc5871779e)
+![image](https://user-images.githubusercontent.com/119640027/205217906-f885cb44-a272-4426-8c62-184bdb7bb325.png)
 
 
 ## Ambient Mesh Demo
