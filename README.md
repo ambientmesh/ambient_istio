@@ -1,5 +1,9 @@
 # ambient-mesh
-Sidecar-less data plane for istio
+
+**Sidecar-less data plane for istio
+
+![image](https://media.github.service.anz/user/75/files/d69ba6d1-bc05-4c17-aec8-10bc5871779e)
+
 
 ## Ambient Mesh Demo
 
@@ -39,7 +43,7 @@ By default, the Ambient profile has the Istio core, Istiod, ingress gateway, ztu
 ```
 Run the following command to check the Pods deployed in the istio-system namespace:
 
-chauhai1@QCV925JTJ7 ambient-mesh % kubectl get po -n istio-system
+chauhai1@QCV925JTJ7 ambient-mesh % kubectl get po -n istio-system -o wide ;kubectl get po -n kube-system -o wide |grep -i cni
 
 NAME                                    READY   STATUS    RESTARTS   AGE
 istio-ingressgateway-57c74cf745-lv75x   1/1     Running   0          35h
@@ -610,7 +614,7 @@ chauhai1@QCV925JTJ7 ambient-mesh %
 
 + **For example, you’ll be able to send any request to the web-api service from the sleep pod while you may only want to allow requests with the GET method.**
 
-+ **In order to have any L7 policy enforced for the web-api service, we need to deploy a waypoint proxy for the service account used by the web-api pod.**
++ **In order to have any L7 policy enforced for the web-api service, you’ll need to deploy a waypoint proxy for the service account used by the web-api pod.**
 
  ![recommendation](https://media.github.service.anz/user/75/files/ec5ce64b-f0b5-405a-a0fe-0da278ebd7c2)
 
@@ -1069,6 +1073,8 @@ chauhai1@QCV925JTJ7 ambient-mesh %
 ### Outcome
 
 You can see that the httpbin application has received the request with the X-Forwarded-Client-Cert indicating that the request was sent by a Pod with the identity corresponding to the sleep service account.
+
+ <img width="660" alt="image" src="https://media.github.service.anz/user/75/files/43cd1287-58ce-4809-a480-985c437c25d2">
 
 ## End of Demo 
 
