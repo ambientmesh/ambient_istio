@@ -80,7 +80,7 @@ You’ll notice the following pods are deployed in the istio-system namespace wi
 3. We will use curl as your client, either outside of the cluster or in the cluster from the sleep pod. 
 4. Pod anti-affinity rules are specified in the sleep, web-api, recommendation and purchase-history deployment descriptors to avoid them deployed on the same node whenever possible.
 
-![image](https://media.github.service.anz/user/75/files/ff51b0d1-a4ce-4183-8228-83a5731c4880)
+![image](https://user-images.githubusercontent.com/119640027/205218217-2234c519-9c6d-4818-8e70-5d70be017835.png)
 
 **Application without Istio**
 
@@ -277,8 +277,8 @@ chauhai1@QCV925JTJ7 ambient-mesh % kubectl -n kube-system logs -l k8s-app=istio-
 
 ## To demo this - 
 
- ![(sleep)](https://media.github.service.anz/user/75/files/9ed38219-9f29-4428-90fd-48127e3abea4)
-
+![image](https://user-images.githubusercontent.com/119640027/205218519-9064db3b-8845-4f56-bdde-baaffea4c254.png)
+ 
 **What we do to test the ztunnel in action?**
 
 + The sleep (client) pod calls the web-api (server) service via http on port 8080.
@@ -616,7 +616,8 @@ chauhai1@QCV925JTJ7 ambient-mesh %
 
 + **In order to have any L7 policy enforced for the web-api service, you’ll need to deploy a waypoint proxy for the service account used by the web-api pod.**
 
- ![recommendation](https://media.github.service.anz/user/75/files/ec5ce64b-f0b5-405a-a0fe-0da278ebd7c2)
+![image](https://user-images.githubusercontent.com/119640027/205218428-d7e0ee0e-5cae-40ad-8a98-d98f0f4bc547.png)
+
 
 
 ### Step 1
@@ -1074,7 +1075,8 @@ chauhai1@QCV925JTJ7 ambient-mesh %
 
 You can see that the httpbin application has received the request with the X-Forwarded-Client-Cert indicating that the request was sent by a Pod with the identity corresponding to the sleep service account.
 
- <img width="660" alt="image" src="https://media.github.service.anz/user/75/files/43cd1287-58ce-4809-a480-985c437c25d2">
+![image](https://user-images.githubusercontent.com/119640027/205218325-27c7f97f-0021-48f7-9bc7-6791f26026da.png)
+
 
 ## End of Demo 
 
