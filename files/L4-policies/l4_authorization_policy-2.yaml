@@ -1,0 +1,50 @@
+apiVersion: security.istio.io/v1beta1
+kind: AuthorizationPolicy
+metadata:
+  name: "web-api-rbac"
+  namespace: anz-ambient-demo
+spec:
+  selector:
+    matchLabels:
+      app: web-api
+  action: ALLOW
+  rules:
+  - from:
+    - source:
+        principals: ["cluster.local/ns/anz-ambient-demo/sa/sleep"]
+    - source:
+        namespaces: ["test-ambientmesh"]
+---
+apiVersion: security.istio.io/v1beta1
+kind: AuthorizationPolicy
+metadata:
+  name: "recommendation-rbac"
+  namespace: anz-ambient-demo
+spec:
+  selector:
+    matchLabels:
+      app: recommendation
+  action: ALLOW
+  rules:
+  - from:
+    - source:
+        principals: ["cluster.local/ns/anz-ambient-demo/sa/web-api"]
+    - source:
+        namespaces: ["test-ambientmesh"]
+---
+apiVersion: security.istio.io/v1beta1
+kind: AuthorizationPolicy
+metadata:
+  name: "purchase-history-rbac"
+  namespace: anz-ambient-demo
+spec:
+  selector:
+    matchLabels:
+      app: purchase-history
+  action: ALLOW
+  rules:
+  - from:
+    - source:
+        principals: ["cluster.local/ns/anz-ambient-demo/sa/recommendation"]
+    - source:
+        namespaces: ["test-ambientmesh"]

@@ -1,0 +1,9 @@
+apiVersion: gateway.networking.k8s.io/v1alpha2
+kind: Gateway
+metadata:
+  name: web-api
+  namespace: anz-ambient-demo
+  annotations:
+    istio.io/service-account: web-api
+spec:
+  gatewayClassName: istio-mesh
