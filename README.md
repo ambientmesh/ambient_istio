@@ -16,16 +16,16 @@
 
 The following environments have been tested and are expected to work:
 
-GKE (without Calico or Dataplane V2)
-EKS
-kind
+- GKE (without Calico or Dataplane V2)
+- EKS
+- kind
 
 ## The following environments are known to not work currently:
 
-GKE with Calico CNI
-GKE with Dataplane V2 CNI
-kind on Mac computers with Apple silicon
-All other environments are unknown currently.
+- GKE with Calico CNI
+- GKE with Dataplane V2 CNI
+- kind on Mac computers with Apple silicon
+- All other environments are unknown currently.
 
 
 
