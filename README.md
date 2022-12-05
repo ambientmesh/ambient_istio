@@ -6,6 +6,23 @@
 
 - __[Ambient Mesh](https://istio.io/latest/blog/2022/introducing-ambient-mesh/)__
 
+## Supported Environments
+
+The following environments have been tested and are expected to work:
+
+GKE (without Calico or Dataplane V2)
+EKS
+kind
+
+## The following environments are known to not work currently:
+
+GKE with Calico CNI
+GKE with Dataplane V2 CNI
+kind on Mac computers with Apple silicon
+All other environments are unknown currently.
+
+
+
 ![image](https://user-images.githubusercontent.com/119640027/205217906-f885cb44-a272-4426-8c62-184bdb7bb325.png)
 
 
