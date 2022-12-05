@@ -2,6 +2,10 @@
 
 **Sidecar-less data plane for istio
 
+## Introduction:
+
+[istio.io ] (https://istio.io/latest/blog/2022/introducing-ambient-mesh/)
+
 ![image](https://user-images.githubusercontent.com/119640027/205217906-f885cb44-a272-4426-8c62-184bdb7bb325.png)
 
 
